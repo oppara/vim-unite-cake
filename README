@@ -1,0 +1,57 @@
+a unite.vim plugin for cakephp
+
+unite /app
+  :Unite cake/app
+
+unite /app/tests
+  :Unite cake/test
+
+unite /app/models
+  :Unite cake/model
+
+unite /app/controllers
+  :Unite cake/controller
+
+unite /app/views
+  :Unite cake/view
+
+unite /app/config
+  :Unite cake/config
+
+unite /app/controllers/components
+  :Unite cake/component
+
+unite /app/models/behaviors
+  :Unite cake/behavior
+
+unite /app/views/helpers
+  :Unite cake/helper
+
+unite /app/vendors
+  :Unite cake/vendor
+
+unite /app/plugins
+  :Unite cake/plugin
+
+unite /app/libs
+  :Unite cake/lib
+
+unite /app/locale
+  :Unite cake/locale
+
+unite /app/models/datasources
+  :Unite cake/datasource
+
+unite /app/vendors/shells
+  :Unite cake/shell
+
+unite /config
+  :Unite cake/config
+
+unite /app/webroot/ja
+  :Unite cake/js
+
+unite /app/webroot/css
+  :Unite cake/css
+
+
