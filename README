@@ -1,5 +1,9 @@
 a unite.vim plugin for cakephp
 
+inspired by basyura's unite-rails
+https://github.com/basyura/unite-rails
+
+
 unite /app
   :Unite cake/app
 
