@@ -4,7 +4,7 @@ set cpo&vim
 " Variables  "{{{
 " @TODO"
 call unite#util#set_default('g:unite_source_cake_ignore_pattern',
-      \'^\%(/\|\a\+:/\)$\|\%(^\|/\)\.\.\?$\|\~$\|\.\%(o|exe|dll|bak|sw[po]\)$')
+      \'^\%(/\|\a\+:/\)$\|\%(^\|/\)\.\.\?$\|empty$\|\~$\|\.\%(o|exe|dll|bak|sw[po]\)$')
 "}}}
 
 let s:places =[
@@ -54,13 +54,20 @@ function! s:create_sources(path)
   let root = s:cake_root()
   if root == "" | return [] | end
   let files = map(split(globpath(root . a:path , '**') , '\n') , '{
-          \ "name" : fnamemodify(v:val , ":t:r") ,
-          \ "path" : v:val
-          \ }')
+        \ "name" : fnamemodify(v:val , ":t:r") ,
+        \ "path" : v:val
+        \ }')
 
   let list = []
   for f in files
     if isdirectory(f.path) | continue | endif
+
+    if g:unite_source_cake_ignore_pattern != '' &&
+          \ f.path =~  string(g:unite_source_cake_ignore_pattern)
+        continue
+    endif
+
+
     call add(list , {
           \ "abbr" : substitute(f.path , root . a:path . '/' , '' , ''),
           \ "word" : substitute(f.path , root . a:path . '/' , '' , ''),
