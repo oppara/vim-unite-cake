@@ -8,23 +8,23 @@ call unite#util#set_default('g:unite_source_cake_ignore_pattern',
 "}}}
 
 let s:places =[
-      \ {'name' : 'app'        , 'path' : '/app'                        } ,
-      \ {'name' : 'test'       , 'path' : '/app/tests'                  } ,
-      \ {'name' : 'controller' , 'path' : '/app/controllers'            } ,
-      \ {'name' : 'model'      , 'path' : '/app/models'                 } ,
-      \ {'name' : 'view'       , 'path' : '/app/views'                  } ,
-      \ {'name' : 'config'     , 'path' : '/app/config'                 } ,
-      \ {'name' : 'component'  , 'path' : '/app/controllers/components' } ,
-      \ {'name' : 'behavior'   , 'path' : '/app/models/behaviors'       } ,
-      \ {'name' : 'helper'     , 'path' : '/app/views/helpers'          } ,
-      \ {'name' : 'vendor'     , 'path' : '/app/vendors'                } ,
-      \ {'name' : 'plugin'     , 'path' : '/app/plugins'                } ,
-      \ {'name' : 'lib'        , 'path' : '/app/libs'                   } ,
-      \ {'name' : 'locale'     , 'path' : '/app/locale'                 } ,
-      \ {'name' : 'datasource' , 'path' : '/app/models/datasources'     } ,
-      \ {'name' : 'shell'      , 'path' : '/app/vendors/shells'         } ,
-      \ {'name' : 'js'         , 'path' : '/app/webroot/js'             } ,
-      \ {'name' : 'css'        , 'path' : '/app/webroot/css'            } ,
+      \ {'name' : 'app'        , 'path' : '/src'                        } ,
+      \ {'name' : 'test'       , 'path' : '/tests'                      } ,
+      \ {'name' : 'controller' , 'path' : '/src/Controller'             } ,
+      \ {'name' : 'model'      , 'path' : '/src/Model'                  } ,
+      \ {'name' : 'view'       , 'path' : '/src/View'                   } ,
+      \ {'name' : 'template'   , 'path' : '/src/Template'               } ,
+      \ {'name' : 'config'     , 'path' : '/config'                     } ,
+      \ {'name' : 'component'  , 'path' : '/src/Controller/Component'   } ,
+      \ {'name' : 'behavior'   , 'path' : '/src/Model/Behavior'         } ,
+      \ {'name' : 'entity'     , 'path' : '/src/Model/Entity'           } ,
+      \ {'name' : 'table'      , 'path' : '/src/Model/Table'            } ,
+      \ {'name' : 'helper'     , 'path' : '/src/Views/Helper'           } ,
+      \ {'name' : 'vendor'     , 'path' : '/vendor'                     } ,
+      \ {'name' : 'plugin'     , 'path' : '/plugins'                    } ,
+      \ {'name' : 'shell'      , 'path' : '/src/Shell'                  } ,
+      \ {'name' : 'js'         , 'path' : '/webroot/js'                 } ,
+      \ {'name' : 'css'        , 'path' : '/webroot/css'                } ,
       \  ]
 
 let s:source = {}
@@ -82,7 +82,7 @@ endfunction
 
 
 function! s:cake_root()
-  let dir = finddir("app" , ".;")
+  let dir = finddir("src" , ".;")
   if dir == "" | return "" | endif
   return  dir . "/../"
 endfunction
